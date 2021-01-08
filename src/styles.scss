@@ -2,3 +2,11 @@
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+
+.global-modals {
+
+  .modal-content {
+    border-radius: 30px;
+  }
+
+}

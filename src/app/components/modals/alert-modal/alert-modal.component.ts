@@ -1,6 +1,5 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { NgbActiveModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { EventEmitter } from 'events';
 
 @Component({
   selector: 'app-alert-modal',
@@ -25,6 +24,7 @@ export class AlertModalComponent implements OnInit {
     this.whenConfirm.emit('');
     this.modalRef.close();
   }
+
 
 
 }
