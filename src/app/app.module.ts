@@ -6,18 +6,22 @@ import { AppComponent } from './app.component';
 import { NgbModule, NgbModalModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { AlertModalComponent } from './components/modals/alert-modal/alert-modal.component';
 import { ComplexModalComponent } from './components/modals/complex-modal/complex-modal.component';
+import { LoadingModalComponent } from './components/modals/loading-modal/loading-modal.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
     AppComponent,
     AlertModalComponent,
-    ComplexModalComponent
+    ComplexModalComponent,
+    LoadingModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModalModule,
     NgbModule,
+    NgxSpinnerModule
   ],
   providers: [
   ],

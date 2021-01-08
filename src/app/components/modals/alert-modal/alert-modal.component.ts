@@ -26,5 +26,4 @@ export class AlertModalComponent implements OnInit {
   }
 
 
-
 }

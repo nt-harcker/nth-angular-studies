@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { AlertModalComponent } from './components/modals/alert-modal/alert-modal.component';
 import { ComplexModalComponent } from './components/modals/complex-modal/complex-modal.component';
 import { ModalService } from './services/modal.service';
 
@@ -21,12 +19,12 @@ export class AppComponent {
 
     switch (modalCode) {
       case 1:
-        this.modalService.showAlert('Warning!', 'This is a very simple modal.', 'sm', () => {
+        this.modalService.showAlert('Warning!', 'This is a very simple modal.', 'sm', '', () => {
           alert('Your action has been interpreted.')
         })
         break;
       case 2:
-        this.modalService.showAlert('Warning!', 'This is a very simple modal bug bigger.', 'lg', () => {
+        this.modalService.showAlert('Warning!', 'This is a very simple modal bug bigger.', 'lg', '', () => {
           alert('Your action has been interpreted.')
         })
         break;
@@ -44,5 +42,16 @@ export class AppComponent {
         size: 'xl',
       }
     );
+  }
+
+  handleLoading(): void {
+
+    this.modalService.startLoading();
+
+    setTimeout(() => {
+      this.modalService.stopLoading();
+    }, 4000);
+
+
   }
 }
