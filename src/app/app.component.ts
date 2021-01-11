@@ -40,6 +40,7 @@ export class AppComponent {
       {
         backdrop: false,
         size: 'xl',
+        centered: true,
       }
     );
   }

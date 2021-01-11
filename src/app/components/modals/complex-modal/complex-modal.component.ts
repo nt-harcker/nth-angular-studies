@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalService } from 'src/app/services/modal.service';
 
 @Component({
@@ -14,10 +14,22 @@ export class ComplexModalComponent implements OnInit {
     private modalService: ModalService,
   ) { }
 
+  hidden = false;
+
   @Input() randomProp: string = '';
 
   openAnotherModal(): void {
     this.modalService.showAlert('Hey!', 'Im a modal inside of a modal', 'sm');
+  }
+
+  hideModal(): void {
+    this.modalService.startLoading();
+    this.hidden = true;
+
+    setTimeout(() => {
+      this.hidden = false;
+      this.modalService.stopLoading();
+    }, 2000);
   }
 
   close(): void {

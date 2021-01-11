@@ -10,6 +10,14 @@ export class ModalService {
 
   loadingRef?: NgbModalRef;
 
+  /**
+   * Affects the global modals, that are: loading, confirm and alert
+   */
+  globalProps = {
+    windowClass: 'global-modals',
+    centered: true,
+  }
+
   constructor(private ngbModal: NgbModal) { }
 
   showAlert(
@@ -20,7 +28,7 @@ export class ModalService {
     onConfirm?: Function,
   ): void {
     const modal = this.ngbModal.open(AlertModalComponent, {
-      windowClass: 'global-modals',
+      ...this.globalProps,
       size
     });
     modal.componentInstance.title = title;
@@ -37,7 +45,9 @@ export class ModalService {
   ): void {
 
     this.loadingRef = this.ngbModal.open(LoadingModalComponent, {
-      backdrop: false,
+      ...this.globalProps,
+      backdrop: 'static',
+      backdropClass: 'loading-overlay',
     });
 
   }

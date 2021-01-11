@@ -8,13 +8,15 @@ import { AlertModalComponent } from './components/modals/alert-modal/alert-modal
 import { ComplexModalComponent } from './components/modals/complex-modal/complex-modal.component';
 import { LoadingModalComponent } from './components/modals/loading-modal/loading-modal.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { OverlayComponent } from './components/overlay/overlay.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AlertModalComponent,
     ComplexModalComponent,
-    LoadingModalComponent
+    LoadingModalComponent,
+    OverlayComponent
   ],
   imports: [
     BrowserModule,

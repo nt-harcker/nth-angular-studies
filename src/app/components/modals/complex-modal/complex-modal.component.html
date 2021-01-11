@@ -1,8 +1,11 @@
-<div class="complex-modal">
+<div class="complex-modal" [ngClass]="{'hidden': hidden}">
   {{ randomProp }}
 
-  <div>
-    <button (click)="openAnotherModal()">Open another modal...</button>
-    <button (click)="close()">Close!</button>
+  <input />
+
+  <div style="position: absolute; right: 5px; bottom: 5px;">
+    <button (click)="openAnotherModal()" style="margin-right: 5px;" class="btn btn-secondary">Open another modal...</button>
+    <button (click)="hideModal()" style="margin-right: 5px;" class="btn btn-info">Hide modal</button>
+    <button (click)="close()" class="btn btn-primary">Close!</button>
   </div>
 </div>
